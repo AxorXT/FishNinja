@@ -9,21 +9,10 @@ public class Fish : MonoBehaviour
     [Header("Slice")]
     public GameObject slicedPrefab;
 
-    public void Slice()
+    public void Slice(Vector3 direction)
     {
-        //Partículas
-        if (splashEffect != null)
-        {
-            Instantiate(splashEffect, transform.position, Quaternion.identity);
-        }
+        // efectos (igual que antes)
 
-        //Sonido
-        if (sliceSound != null)
-        {
-            AudioSource.PlayClipAtPoint(sliceSound, transform.position);
-        }
-
-        //Crear pez cortado
         if (slicedPrefab != null)
         {
             GameObject sliced = Instantiate(slicedPrefab, transform.position, transform.rotation);
@@ -32,8 +21,20 @@ public class Fish : MonoBehaviour
 
             foreach (Rigidbody rb in parts)
             {
-                rb.AddForce(Random.onUnitSphere * 5f, ForceMode.Impulse);
+                //Fuerza controlada
+                Vector3 force = new Vector3(
+                    direction.x * 2f,   // leve horizontal
+                    2f,                 // pequeï¿½o impulso hacia arriba
+                    0
+                );
+
+                rb.linearVelocity = force;
+
+                // Rotaciï¿½n ligera
+                rb.AddTorque(new Vector3(0, 0, Random.Range(-5f, 5f)), ForceMode.Impulse);
             }
+
+            Destroy(sliced, 2f);
         }
 
         Destroy(gameObject);

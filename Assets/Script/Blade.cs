@@ -11,6 +11,7 @@ public class Blade : MonoBehaviour
 
     private PlayerInputActions input;
     private bool cutting;
+    private Vector3 lastPosition;
 
     void Awake()
     {
@@ -29,8 +30,12 @@ public class Blade : MonoBehaviour
 
     void Update()
     {
+        Vector3 previousPosition = transform.position;
+
         UpdatePosition();
         UpdateCutState();
+
+        lastPosition = previousPosition;
     }
 
     void UpdatePosition()
@@ -61,7 +66,13 @@ public class Blade : MonoBehaviour
 
         if (other.CompareTag("Fish"))
         {
-            other.GetComponent<Fish>().Slice();
+            Fish fish = other.GetComponentInParent<Fish>();
+
+            if (fish != null)
+            {
+                Vector3 direction = (transform.position - lastPosition).normalized;
+                fish.Slice(direction);
+            }
         }
     }
 }
