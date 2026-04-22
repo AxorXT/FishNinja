@@ -71,7 +71,10 @@ public class Blade : MonoBehaviour
             if (fish != null)
             {
                 Vector3 direction = (transform.position - lastPosition).normalized;
-                fish.Slice(direction);
+
+                Vector3 hitPoint = other.ClosestPoint(transform.position);
+
+                fish.Slice(direction, hitPoint);
             }
         }
     }
