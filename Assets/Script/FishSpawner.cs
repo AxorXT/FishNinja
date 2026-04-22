@@ -26,9 +26,40 @@ public class FishSpawner : MonoBehaviour
     [Header("Timing")]
     public float spawnRate = 1f;
 
-    void Start()
+    [Header("Dynamic Difficulty")]
+    public float baseSpawnRate = 1f;
+    public float minSpawnRate = 0.3f;
+    public float maxSpawnRate = 1.5f;
+
+    public float waveSpeed = 0.5f; // qué tan rápido oscila
+    public float difficultyScale = 0.0005f; // qué tanto influye el score
+
+    float timer;
+
+    void Update()
     {
-        InvokeRepeating(nameof(SpawnFish), 1f, spawnRate);
+        float score = ScoreManager.Instance.score;
+
+        //efecto montaña rusa
+        float wave = Mathf.Sin(Time.time * waveSpeed);
+
+        //dificultad base por score
+        float difficulty = 1f + (score * difficultyScale);
+
+        //spawn dinámico
+        float currentSpawnRate = Mathf.Clamp(
+            baseSpawnRate / difficulty + wave * 0.5f,
+            minSpawnRate,
+            maxSpawnRate
+        );
+
+        timer += Time.deltaTime;
+
+        if (timer >= currentSpawnRate)
+        {
+            SpawnFish();
+            timer = 0f;
+        }
     }
 
     void SpawnFish()

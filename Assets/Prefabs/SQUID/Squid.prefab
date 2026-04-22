@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fish
   splashEffect: {fileID: 194016, guid: 263867d4955e3644f9a1dfa779ab7d1e, type: 3}
-  sliceSound: {fileID: 8300000, guid: 6f25bfe81d60c77449030cd2cc652124, type: 3}
+  sliceSound: {fileID: 8300000, guid: fcf34839e3e40e64d919d4afd2fe3000, type: 3}
   leftPrefab: {fileID: 8005289023475899423, guid: 0eb72eab21b878a41811ffa62f84a156, type: 3}
   rightPrefab: {fileID: 7558344552812195685, guid: 2fd8b91cd51675742979031b537ea929, type: 3}
-  points: 10
+  points: -20
   isBadFish: 1

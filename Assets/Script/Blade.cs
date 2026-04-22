@@ -12,6 +12,8 @@ public class Blade : MonoBehaviour
     private PlayerInputActions input;
     private bool cutting;
     private Vector3 lastPosition;
+    public float minCutSpeed = 0.01f;
+    private float bladeSpeed;
 
     void Awake()
     {
@@ -35,6 +37,7 @@ public class Blade : MonoBehaviour
         UpdatePosition();
         UpdateCutState();
 
+        bladeSpeed = (transform.position - previousPosition).magnitude;
         lastPosition = previousPosition;
     }
 
@@ -62,7 +65,7 @@ public class Blade : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!cutting) return;
+        if (!cutting || bladeSpeed < minCutSpeed) return;
 
         if (other.CompareTag("Fish"))
         {

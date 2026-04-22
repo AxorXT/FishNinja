@@ -21,6 +21,8 @@ public class Fish : MonoBehaviour
     {
         if (isBadFish)
         {
+            GameManager.Instance.CutOctopus();
+            ScoreManager.Instance.ResetCombo();
             //castigo
             ScoreManager.Instance.AddPoints(-20);
             ScoreManager.Instance.ShowPoints(-20, hitPoint);
@@ -29,9 +31,10 @@ public class Fish : MonoBehaviour
         }
         else
         {
-            //normal
-            ScoreManager.Instance.AddPoints(points);
-            ScoreManager.Instance.ShowPoints(points, hitPoint);
+            ScoreManager.Instance.AddCombo();
+
+            int finalPoints = ScoreManager.Instance.AddPoints(points);
+            ScoreManager.Instance.ShowPoints(finalPoints, hitPoint);
         }
 
         if (sliceSound != null)

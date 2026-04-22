@@ -157,7 +157,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 60, y: 19, z: 45.29}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4064333850861589583}
@@ -225,10 +225,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fish
   splashEffect: {fileID: 194016, guid: 263867d4955e3644f9a1dfa779ab7d1e, type: 3}
-  sliceSound: {fileID: 8300000, guid: 6f25bfe81d60c77449030cd2cc652124, type: 3}
+  sliceSound: {fileID: 8300000, guid: fcf34839e3e40e64d919d4afd2fe3000, type: 3}
   leftPrefab: {fileID: 8567100514048867022, guid: b9a096678c667bd419166ca722dee9ee, type: 3}
   rightPrefab: {fileID: 8567100514048867022, guid: cafcf10659740fa4d8daa338d9af7594, type: 3}
-  points: 30
+  points: 20
+  isBadFish: 0
 --- !u!1 &3346466015310683347
 GameObject:
   m_ObjectHideFlags: 0
