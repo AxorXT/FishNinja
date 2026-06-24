@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 0f4b0ff3759975048bcf2c3692ba1002, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d48a7646f5d0547e889733d84b50cb9f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -484,8 +484,10 @@ MonoBehaviour:
     weight: 30
   - prefab: {fileID: 2111210194966576455, guid: 971eb422c409a784e869c6036a47d95d, type: 3}
     weight: 30
-  - prefab: {fileID: 2002487102033525000, guid: a1ef230ad33238d48a97e68ab7a1d4ab, type: 3}
+  - prefab: {fileID: 5238676955432890323, guid: 9b1cbf81cdc5a4f4f9cbf868f6152300, type: 3}
     weight: 50
+  - prefab: {fileID: 5529315494243113320, guid: 662c36975e29b5b49958e97141f10d47, type: 3}
+    weight: 30
   minX: 60
   maxX: 60
   spawnY: 16.5
@@ -1929,7 +1931,7 @@ Transform:
   m_GameObject: {fileID: 832575517}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.97, y: 23.41, z: 36}
+  m_LocalPosition: {x: 30.97, y: 24.65, z: 36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
