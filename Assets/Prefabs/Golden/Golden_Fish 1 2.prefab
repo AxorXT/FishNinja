@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1558610538765707123}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BN_GoldenF_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7172628827993908991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BN_GoldenF_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4068153493960331511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BN_GoldenB_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2653357837609986556}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BN_GoldenB_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 251974500039154439}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BN_GoldenB_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8159385449323764698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BN_GoldenB_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,9 +201,9 @@ GameObject:
   - component: {fileID: 3798172429570496572}
   - component: {fileID: 630198098596649219}
   - component: {fileID: 8527765347607312681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Golden_Fish 1 2
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,7 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2866880992146405991}
   - component: {fileID: 8836620672895141839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Golden_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7920425938235046001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BN_GoldenF_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8342027321428255105}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BN_GoldenB_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
