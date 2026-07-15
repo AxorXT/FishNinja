@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishSpawner
   fishPrefabs:
-  - prefab: {fileID: 2689119491110529701, guid: 557a7bf3a60a070458253628e909c525, type: 3}
+  - prefab: {fileID: 5529315494243113320, guid: 662c36975e29b5b49958e97141f10d47, type: 3}
     weight: 70
   - prefab: {fileID: 5484187599027488543, guid: a399dac39a360784e951cade06fc15a7, type: 3}
     weight: 60
@@ -484,7 +484,7 @@ MonoBehaviour:
     weight: 30
   - prefab: {fileID: 2111210194966576455, guid: 971eb422c409a784e869c6036a47d95d, type: 3}
     weight: 30
-  - prefab: {fileID: 2002487102033525000, guid: a1ef230ad33238d48a97e68ab7a1d4ab, type: 3}
+  - prefab: {fileID: 5238676955432890323, guid: 9b1cbf81cdc5a4f4f9cbf868f6152300, type: 3}
     weight: 50
   minX: 60
   maxX: 60
@@ -2836,7 +2836,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1259822764
 Canvas:
   m_ObjectHideFlags: 0
@@ -2846,7 +2846,7 @@ Canvas:
   m_GameObject: {fileID: 1259822761}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2867,10 +2867,10 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259822761}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 47.1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 99987416}
   - {fileID: 1831358286}
@@ -2878,12 +2878,12 @@ RectTransform:
   - {fileID: 523044597}
   - {fileID: 85959413}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 51.64, y: 22.9}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1421714193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3724,7 +3724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.16862746}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
