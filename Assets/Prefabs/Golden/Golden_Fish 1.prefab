@@ -299,9 +299,10 @@ GameObject:
   - component: {fileID: 1632880652957180350}
   - component: {fileID: 2554641019614496717}
   - component: {fileID: 1502226376275581602}
+  - component: {fileID: 5721092152700024123}
   m_Layer: 6
   m_Name: Golden_Fish 1
-  m_TagString: Finish
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,7 +316,7 @@ Transform:
   m_GameObject: {fileID: 5529315494243113320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 60.25822, y: 24.569641, z: 42.807236}
+  m_LocalPosition: {x: 60.273, y: 24.569641, z: 42.807236}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -344,8 +345,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0049553, y: 0.4928093, z: 0.43804932}
-  m_Center: {x: -0.14782524, y: 0.07929611, z: -0.014438629}
+  m_Size: {x: 1.0244637, y: 0.4928093, z: 0.43804932}
+  m_Center: {x: -0.18061256, y: 0.07929611, z: -0.014438629}
 --- !u!54 &2554641019614496717
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -391,6 +392,19 @@ MonoBehaviour:
   rightPrefab: {fileID: 3929477676765157713, guid: 67b8a60be8323aa4599de1b5d6a2db83, type: 3}
   points: 10
   isBadFish: 0
+--- !u!114 &5721092152700024123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5529315494243113320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da13deadd3bf6ab4291584a596fca684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateOnSpawn
+  rotation: {x: 0, y: 90, z: 0}
 --- !u!1 &5636905742353161767
 GameObject:
   m_ObjectHideFlags: 0
