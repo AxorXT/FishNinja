@@ -16,8 +16,11 @@ public class GameManager : MonoBehaviour
     [Header("Effects")]
     public TrailRenderer playerTrail;
 
+    [Header("Platform")]
+    [SerializeField] private bool isVR = false;
+
     [Header("Camera Transition")]
-    [SerializeField] private Transform gameCamera;
+    [SerializeField] private Transform playerRig;
     [SerializeField] private Transform menuCameraPoint;
     [SerializeField] private Transform gameplayCameraPoint;
 
@@ -72,8 +75,11 @@ public class GameManager : MonoBehaviour
         hud.SetActive(false);
         SetTrail(false);
 
-        gameCamera.position = menuCameraPoint.position;
-        gameCamera.rotation = menuCameraPoint.rotation;
+        if (!isVR)
+        {
+            playerRig.position = menuCameraPoint.position;
+            playerRig.rotation = menuCameraPoint.rotation;
+        }
         fishSpawner.StopSpawning();
     }
 
@@ -95,7 +101,7 @@ public class GameManager : MonoBehaviour
             return;
 
         Debug.Log("Click o Touch detectado");
-        // aquí va tu lógica de gameplay
+        // aquï¿½ va tu lï¿½gica de gameplay
     }
 
     // PLAY
@@ -103,30 +109,40 @@ public class GameManager : MonoBehaviour
     {
         startMenu.SetActive(false);
 
-        Sequence sequence = DOTween.Sequence();
-
-        sequence.Append(
-            gameCamera.DOMove(
-                gameplayCameraPoint.position,
-                transitionTime
-            )
-        );
-
-        sequence.Join(
-            gameCamera.DORotateQuaternion(
-                gameplayCameraPoint.rotation,
-                transitionTime
-            )
-        );
-
-        sequence.OnComplete(() =>
+        if (!isVR)
         {
-            fishSpawner.StartSpawning();
-            blade.enabled = true;
-            hud.SetActive(true);
-            SetTrail(true);
-            AnimatePanel(hud);
-        });
+            Sequence sequence = DOTween.Sequence();
+
+            sequence.Append(
+                playerRig.DOMove(
+                    gameplayCameraPoint.position,
+                    transitionTime
+                )
+            );
+
+            sequence.Join(
+                playerRig.DORotateQuaternion(
+                    gameplayCameraPoint.rotation,
+                    transitionTime
+                )
+            );
+
+            sequence.OnComplete(StartGameplay);
+        }
+        else
+        {
+            // En VR, por ahora inicia directamente
+            StartGameplay();
+        }
+    }
+
+    private void StartGameplay()
+    {
+        fishSpawner.StartSpawning();
+        blade.enabled = true;
+        hud.SetActive(true);
+        SetTrail(true);
+        AnimatePanel(hud);
     }
 
     // PAUSA
@@ -213,7 +229,7 @@ public class GameManager : MonoBehaviour
 
     public void QuitGame()
     {
-        Time.timeScale = 1f; // por si estás en pausa
+        Time.timeScale = 1f; // por si estï¿½s en pausa
 
         Application.Quit();
     }
