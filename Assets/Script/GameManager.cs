@@ -9,11 +9,19 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
+    [SerializeField] private FishSpawner fishSpawner;
+    [SerializeField] private MonoBehaviour blade;
     private PlayerInputActions inputActions;
 
     [Header("Effects")]
     public TrailRenderer playerTrail;
+
+    [Header("Camera Transition")]
+    [SerializeField] private Transform gameCamera;
+    [SerializeField] private Transform menuCameraPoint;
+    [SerializeField] private Transform gameplayCameraPoint;
+
+    [SerializeField] private float transitionTime = 2f;
 
     [Header("Menus")]
     public GameObject startMenu;
@@ -57,13 +65,16 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 0f;
-
+        blade.enabled = false;
         startMenu.SetActive(true);
         pauseMenu.SetActive(false);
         gameOverMenu.SetActive(false);
         hud.SetActive(false);
         SetTrail(false);
+
+        gameCamera.position = menuCameraPoint.position;
+        gameCamera.rotation = menuCameraPoint.rotation;
+        fishSpawner.StopSpawning();
     }
 
     void Update()
@@ -90,12 +101,32 @@ public class GameManager : MonoBehaviour
     // PLAY
     public void StartGame()
     {
-        Time.timeScale = 1f;
-
         startMenu.SetActive(false);
-        hud.SetActive(true);
-        SetTrail(true);
-        AnimatePanel(hud);
+
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.Append(
+            gameCamera.DOMove(
+                gameplayCameraPoint.position,
+                transitionTime
+            )
+        );
+
+        sequence.Join(
+            gameCamera.DORotateQuaternion(
+                gameplayCameraPoint.rotation,
+                transitionTime
+            )
+        );
+
+        sequence.OnComplete(() =>
+        {
+            fishSpawner.StartSpawning();
+            blade.enabled = true;
+            hud.SetActive(true);
+            SetTrail(true);
+            AnimatePanel(hud);
+        });
     }
 
     // PAUSA

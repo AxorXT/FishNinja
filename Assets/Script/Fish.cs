@@ -90,7 +90,7 @@ public class Fish : MonoBehaviour
         Rigidbody rbRight = right.GetComponent<Rigidbody>();
 
         //Dirección base del corte
-        Vector3 dir = direction.normalized;
+        Vector3 dir = Vector3.right;
 
         float separationForce = 3f;
         float upwardForce = 2.5f;

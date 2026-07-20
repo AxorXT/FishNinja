@@ -33,11 +33,14 @@ public class FishSpawner : MonoBehaviour
 
     public float waveSpeed = 0.5f; // qué tan rápido oscila
     public float difficultyScale = 0.0005f; // qué tanto influye el score
-
+    private bool canSpawn = false;
     float timer;
 
     void Update()
     {
+        if (!canSpawn)
+            return;
+
         float score = ScoreManager.Instance.score;
 
         //efecto montaña rusa
@@ -106,5 +109,16 @@ public class FishSpawner : MonoBehaviour
         }
 
         return fishPrefabs[0].prefab;
+    }
+
+    public void StartSpawning()
+    {
+        timer = 0f;
+        canSpawn = true;
+    }
+
+    public void StopSpawning()
+    {
+        canSpawn = false;
     }
 }

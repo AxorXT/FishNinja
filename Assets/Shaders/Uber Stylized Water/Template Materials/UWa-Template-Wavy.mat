@@ -418,7 +418,7 @@ Material:
     - _1st_Wave_Direction: {r: 1, g: 0, b: 0, a: 0}
     - _2nd_Wave_Direction: {r: -1, g: 0, b: 1, a: 0}
     - _Caustics_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color_Deep: {r: 0, g: 0.4509804, b: 0.3794683, a: 1}
+    - _Color_Deep: {r: 0, g: 0.4509804, b: 0.3794683, a: 0.92941177}
     - _Color_Shallow: {r: 0, g: 1, b: 0.84313726, a: 0}
     - _Deep_Color: {r: 0, g: 0.084048375, b: 0.341, a: 1}
     - _DistanceColor: {r: 1, g: 1, b: 1, a: 1}
